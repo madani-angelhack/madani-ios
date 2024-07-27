@@ -8,7 +8,7 @@
 import Foundation
 
 // Model for Promo Item
-struct PromoItem: Identifiable {
+struct PromoItem: Identifiable, Decodable {
     let id = UUID()
     let name: String
     let price: String
@@ -22,4 +22,5 @@ struct Challenge: Identifiable {
     let title: String
     let description: String
     let participants: Int
+    let image: String
 }

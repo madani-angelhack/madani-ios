@@ -29,8 +29,8 @@ class HomeViewModel: ObservableObject {
     private func loadChallenges() {
         // Mock data
         challenges = [
-            Challenge(title: "Jual 5 kg Sampah", description: "50 kg", participants: 38),
-            Challenge(title: "Melakukan Recycle", description: "1x", participants: 40)
+            Challenge(title: "Jual 5 kg Sampah", description: "50 kg", participants: 38, image: "ilus1"),
+            Challenge(title: "Melakukan Recycle", description: "1x", participants: 40, image: "ilus2")
         ]
     }
 }

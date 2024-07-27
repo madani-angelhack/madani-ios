@@ -19,6 +19,9 @@
 		DAC30E3B2C54C6E9005B08BD /* EdukasiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E3A2C54C6E9005B08BD /* EdukasiViewModel.swift */; };
 		DAC30E3D2C54C6FF005B08BD /* EdukasiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E3C2C54C6FF005B08BD /* EdukasiView.swift */; };
 		DAC30E412C54C797005B08BD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E402C54C797005B08BD /* ProfileView.swift */; };
+		DAC30E452C54CDC0005B08BD /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E442C54CDC0005B08BD /* NetworkHelper.swift */; };
+		DAC30E482C54CED5005B08BD /* TokoKaryaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E472C54CED5005B08BD /* TokoKaryaViewModel.swift */; };
+		DAC30E4A2C54CFA1005B08BD /* TokoKaryaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30E492C54CFA1005B08BD /* TokoKaryaModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		DAC30E3A2C54C6E9005B08BD /* EdukasiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdukasiViewModel.swift; sourceTree = "<group>"; };
 		DAC30E3C2C54C6FF005B08BD /* EdukasiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdukasiView.swift; sourceTree = "<group>"; };
 		DAC30E402C54C797005B08BD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DAC30E442C54CDC0005B08BD /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		DAC30E472C54CED5005B08BD /* TokoKaryaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokoKaryaViewModel.swift; sourceTree = "<group>"; };
+		DAC30E492C54CFA1005B08BD /* TokoKaryaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokoKaryaModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 		DAC30E172C54BFDD005B08BD /* madani */ = {
 			isa = PBXGroup;
 			children = (
+				DAC30E422C54CD7C005B08BD /* Helper */,
 				DAC30E3E2C54C753005B08BD /* ProfilePage */,
 				DAC30E382C54C6CE005B08BD /* EdukasiPage */,
 				DAC30E322C54C68A005B08BD /* TokoKaryaPage */,
@@ -127,6 +134,7 @@
 			children = (
 				DAC30E332C54C691005B08BD /* ViewModel */,
 				DAC30E362C54C6B8005B08BD /* TokoKaryaView.swift */,
+				DAC30E492C54CFA1005B08BD /* TokoKaryaModel.swift */,
 			);
 			path = TokoKaryaPage;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 		DAC30E332C54C691005B08BD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DAC30E472C54CED5005B08BD /* TokoKaryaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -169,6 +178,22 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAC30E422C54CD7C005B08BD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30E432C54CD88005B08BD /* Network */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		DAC30E432C54CD88005B08BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30E442C54CDC0005B08BD /* NetworkHelper.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +270,10 @@
 				DAC30E2D2C54C53F005B08BD /* HomeModel.swift in Sources */,
 				DAC30E2A2C54C4FE005B08BD /* HomeView.swift in Sources */,
 				DAC30E3D2C54C6FF005B08BD /* EdukasiView.swift in Sources */,
+				DAC30E482C54CED5005B08BD /* TokoKaryaViewModel.swift in Sources */,
+				DAC30E452C54CDC0005B08BD /* NetworkHelper.swift in Sources */,
 				DAC30E312C54C5D8005B08BD /* MainHomeView.swift in Sources */,
+				DAC30E4A2C54CFA1005B08BD /* TokoKaryaModel.swift in Sources */,
 				DAC30E3B2C54C6E9005B08BD /* EdukasiViewModel.swift in Sources */,
 				DAC30E412C54C797005B08BD /* ProfileView.swift in Sources */,
 				DAC30E1B2C54BFDD005B08BD /* ContentView.swift in Sources */,

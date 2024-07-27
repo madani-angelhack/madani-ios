@@ -20,19 +20,31 @@ struct HomeView: View {
                 VStack(alignment: .leading) {
                     // Profile and balance
                     HStack {
-                        VStack(alignment: .leading) {
-                            Text("Hello, Maudya!")
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Text("Saldo M-Point: 30.000")
-                            Text("Sampah terjual: 0 kg")
-                        }
-                        Spacer()
-                        // Profile Image
                         Image("profile_image")
                             .resizable()
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
+                        VStack(alignment: .leading) {
+                            Text("Hello")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Text("Maudy")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            
+                        }
+                        Spacer()
+                        VStack {
+                            Text("Saldo M-Point")
+                            Text(": 30.000")
+                            
+                        }
+                        VStack {
+                            Text("Sampah terjual")
+                            Text(": 0 kg")
+                        }
+                        // Profile Image
+                        
                     }
                     .padding()
                     
@@ -46,8 +58,13 @@ struct HomeView: View {
                     
                     // Challenges
                     SectionHeaderView(title: "Challenge hari ini")
-                    ForEach(viewModel.challenges) { challenge in
-                        ChallengeView(challenge: challenge)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(viewModel.challenges) { challenge in
+                                ChallengeView(challenge: challenge)
+                            }
+                        }
                     }
                     
                     // Promo Items
@@ -73,7 +90,7 @@ struct ActionButton: View {
     
     var body: some View {
         VStack {
-            Image(systemName: iconName)
+            Image(iconName)
                 .font(.largeTitle)
                 .foregroundColor(.blue)
             Text(title)
@@ -101,6 +118,7 @@ struct ChallengeView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            Image(challenge.image).background(.red)
             Text(challenge.title)
                 .font(.headline)
             Text(challenge.description)
