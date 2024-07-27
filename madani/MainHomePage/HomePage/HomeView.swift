@@ -13,6 +13,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @State var goToProfile = false
     
     var body: some View {
         NavigationView {
@@ -24,6 +25,9 @@ struct HomeView: View {
                             .resizable()
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
+                            .onTapGesture {
+                                goToProfile = true
+                            }
                         VStack(alignment: .leading) {
                             Text("Hello")
                                 .font(.title)
@@ -50,14 +54,16 @@ struct HomeView: View {
                     
                     // Action buttons
                     HStack {
-                        ActionButton(title: "Jual Sampah", iconName: "trash.fill")
-                        ActionButton(title: "Misi Harian", iconName: "checkmark.circle.fill")
-                        ActionButton(title: "Tukarkan Point", iconName: "gift.fill")
+                        ActionButton(title: "Waste Bank", iconName: "trash.fill")
+                        ActionButton(title: "Disaster Management", iconName: "checkmark.circle.fill")
+                        ActionButton(title: "Daily Mission", iconName: "checkmark.circle.fill")
+                        ActionButton(title: "Market Place", iconName: "checkmark.circle.fill")
+                        ActionButton(title: "Lainnya", iconName: "checkmark.circle.fill")
                     }
                     .padding()
                     
                     // Challenges
-                    SectionHeaderView(title: "Challenge hari ini")
+                    SectionHeaderView(title: "Misi Hari ini")
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
@@ -76,7 +82,14 @@ struct HomeView: View {
                             }
                         }
                     }
-                }
+                }.background(
+                    NavigationLink(
+                        destination: ProfileView(),
+                        isActive: $goToProfile,
+                        label: { EmptyView() }
+                    )
+                    .hidden()
+                )
                 .navigationTitle("Dashboard")
             }
         }
@@ -94,7 +107,7 @@ struct ActionButton: View {
                 .font(.largeTitle)
                 .foregroundColor(.blue)
             Text(title)
-                .font(.headline)
+                .font(.system(size: 12))
         }
         .padding()
         .background(Color.gray.opacity(0.2))

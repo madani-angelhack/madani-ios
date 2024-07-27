@@ -7,70 +7,70 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct TokoKaryaView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = TokoKaryaViewModel()
+    @State private var searchText: String = ""
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    // Profile and balance
+                    // Search Bar
                     HStack {
-                        Image("profile_image")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                        VStack(alignment: .leading) {
-                            Text("Hello")
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Text("Maudy")
-                                .font(.title)
-                                .fontWeight(.bold)
-                            
-                        }
-                        Spacer()
-                        VStack {
-                            Text("Saldo M-Point")
-                            Text(": 30.000")
-                            
-                        }
-                        VStack {
-                            Text("Sampah terjual")
-                            Text(": 0 kg")
-                        }
-                        // Profile Image
-                        
+                        TextField("Cari di Toko Karya...", text: $searchText)
+                            .padding(.leading, 20)
+                        Image(systemName: "magnifyingglass")
+                            .padding(.trailing, 20)
                     }
-                    .padding()
+                    .frame(height: 50)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
                     
-                    // Action buttons
-                    HStack {
-                        ActionButton(title: "Jual Sampah", iconName: "trash.fill")
-                        ActionButton(title: "Misi Harian", iconName: "checkmark.circle.fill")
-                        ActionButton(title: "Tukarkan Point", iconName: "gift.fill")
-                    }
-                    .padding()
-                    
-                    // Challenges
-                    SectionHeaderView(title: "Challenge hari ini")
-                    
+                    // Categories
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(viewModel.challenges) { challenge in
-                                ChallengeView(challenge: challenge)
+                            ForEach(viewModel.categories) { category in
+                                CategoryView(category: category)
                             }
                         }
+                        .padding(.horizontal)
                     }
                     
-                    // Promo Items
-                    SectionHeaderView(title: "Ada promo apa hari ini?")
+                    // Promo Banner
+                    Image("promo_banner")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal)
+                    
+                    // Sales Section
+                    SectionHeaderView(title: "12.12 Sales, buruan checkout!")
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(viewModel.promoItems) { item in
                                 PromoItemView(promoItem: item)
                             }
                         }
+                        .padding(.horizontal)
+                    }
+                    
+                    // Join Us Section
+                    Image("join_us_banner")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal)
+                    
+                    // Recommendations
+                    SectionHeaderView(title: "Rekomendasi")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(viewModel.promoItems) { item in
+                                PromoItemView(promoItem: item)
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                 }
                 .navigationTitle("Toko Karya")
@@ -79,6 +79,27 @@ struct TokoKaryaView: View {
     }
 }
 
-#Preview {
-    TokoKaryaView()
+// Reusable components
+struct CategoryView: View {
+    let category: Category
+    
+    var body: some View {
+        VStack {
+            Image(category.image)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(10)
+            Text(category.name)
+                .font(.caption)
+        }
+        .padding()
+    }
+}
+
+struct TokoKaryaView_Previews: PreviewProvider {
+    static var previews: some View {
+        TokoKaryaView()
+            .previewDevice("iPhone 12")
+    }
 }

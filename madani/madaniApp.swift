@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import GoogleMaps
 
 @main
 struct madaniApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            MainHomeView()
+            ZonaResikoView()
         }
     }
 }

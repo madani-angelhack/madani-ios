@@ -23,4 +23,5 @@ struct Challenge: Identifiable {
     let description: String
     let participants: Int
     let image: String
+    var point: Int = 0
 }

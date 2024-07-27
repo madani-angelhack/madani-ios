@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "misi_harian_header.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
