@@ -85,14 +85,14 @@ struct VoucherView: View {
                 .frame(width: 40, height: 40)
                 .padding()
             VStack(alignment: .leading) {
-                Text(voucher.name)
+                Text(voucher.voucherType ?? "")
                     .font(.headline)
-                Text(voucher.validity)
+                Text(voucher.date ?? "")
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
             Spacer()
-            Text("\(voucher.points) Poin")
+            Text("\(String(voucher.amount ?? 0)) Poin")
                 .font(.headline)
         }
         .padding()

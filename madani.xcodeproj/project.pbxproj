@@ -80,6 +80,16 @@
 		DAC30ED92C553E04005B08BD /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30ED82C553E04005B08BD /* RegisterView.swift */; };
 		DAC30EDB2C553E0D005B08BD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EDA2C553E0D005B08BD /* RegisterViewModel.swift */; };
 		DAC30EDE2C553E2C005B08BD /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EDD2C553E2C005B08BD /* RegisterModel.swift */; };
+		DAC30EE32C553F9B005B08BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EE22C553F9B005B08BD /* LoginView.swift */; };
+		DAC30EE52C553FA3005B08BD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EE42C553FA3005B08BD /* LoginViewModel.swift */; };
+		DAC30EE72C553FAC005B08BD /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EE62C553FAC005B08BD /* LoginModel.swift */; };
+		DAC30EEA2C55407C005B08BD /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EE92C55407C005B08BD /* LandingView.swift */; };
+		DAC30EED2C55431E005B08BD /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EEC2C55431E005B08BD /* LandingViewModel.swift */; };
+		DAC30EEF2C55495C005B08BD /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EEE2C55495C005B08BD /* ImageHelper.swift */; };
+		DAC30EF12C55B0EA005B08BD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EF02C55B0EA005B08BD /* String.swift */; };
+		DAC30EF72C55EB63005B08BD /* WasteManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EF62C55EB63005B08BD /* WasteManagementView.swift */; };
+		DAC30EF92C55EB97005B08BD /* WasteManagementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EF82C55EB97005B08BD /* WasteManagementModel.swift */; };
+		DAC30EFB2C55EBE1005B08BD /* WasteManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC30EFA2C55EBE1005B08BD /* WasteManagementViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +140,16 @@
 		DAC30ED82C553E04005B08BD /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DAC30EDA2C553E0D005B08BD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		DAC30EDD2C553E2C005B08BD /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		DAC30EE22C553F9B005B08BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DAC30EE42C553FA3005B08BD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DAC30EE62C553FAC005B08BD /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		DAC30EE92C55407C005B08BD /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		DAC30EEC2C55431E005B08BD /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		DAC30EEE2C55495C005B08BD /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		DAC30EF02C55B0EA005B08BD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DAC30EF62C55EB63005B08BD /* WasteManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteManagementView.swift; sourceTree = "<group>"; };
+		DAC30EF82C55EB97005B08BD /* WasteManagementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteManagementModel.swift; sourceTree = "<group>"; };
+		DAC30EFA2C55EBE1005B08BD /* WasteManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteManagementViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +211,9 @@
 		DAC30E172C54BFDD005B08BD /* madani */ = {
 			isa = PBXGroup;
 			children = (
+				DAC30EF32C55EB3A005B08BD /* WasteManagementPage */,
+				DAC30EE82C554073005B08BD /* LandingPage */,
+				DAC30EDF2C553F34005B08BD /* LoginPage */,
 				DAC30ED62C553DF3005B08BD /* RegisterPage */,
 				DAC30ED52C552666005B08BD /* madani.entitlements */,
 				DAC30ED42C5525A4005B08BD /* Info.plist */,
@@ -261,9 +284,9 @@
 		DAC30E322C54C68A005B08BD /* TokoKaryaPage */ = {
 			isa = PBXGroup;
 			children = (
+				DAC30EF22C55BE84005B08BD /* Model */,
 				DAC30E332C54C691005B08BD /* ViewModel */,
 				DAC30E362C54C6B8005B08BD /* TokoKaryaView.swift */,
-				DAC30E492C54CFA1005B08BD /* TokoKaryaModel.swift */,
 			);
 			path = TokoKaryaPage;
 			sourceTree = "<group>";
@@ -320,6 +343,8 @@
 				DAC30E842C55039C005B08BD /* View */,
 				DAC30E802C5502B3005B08BD /* NavigationView */,
 				DAC30E432C54CD88005B08BD /* Network */,
+				DAC30EEE2C55495C005B08BD /* ImageHelper.swift */,
+				DAC30EF02C55B0EA005B08BD /* String.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -545,6 +570,83 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DAC30EDF2C553F34005B08BD /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EE12C553F87005B08BD /* Model */,
+				DAC30EE02C553F82005B08BD /* ViewModel */,
+				DAC30EE22C553F9B005B08BD /* LoginView.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		DAC30EE02C553F82005B08BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EE42C553FA3005B08BD /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAC30EE12C553F87005B08BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EE62C553FAC005B08BD /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAC30EE82C554073005B08BD /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EEB2C55430F005B08BD /* ViewModel */,
+				DAC30EE92C55407C005B08BD /* LandingView.swift */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		DAC30EEB2C55430F005B08BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EEC2C55431E005B08BD /* LandingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAC30EF22C55BE84005B08BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30E492C54CFA1005B08BD /* TokoKaryaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAC30EF32C55EB3A005B08BD /* WasteManagementPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EF52C55EB57005B08BD /* Model */,
+				DAC30EF42C55EB52005B08BD /* ViewModel */,
+				DAC30EF62C55EB63005B08BD /* WasteManagementView.swift */,
+			);
+			path = WasteManagementPage;
+			sourceTree = "<group>";
+		};
+		DAC30EF42C55EB52005B08BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EFA2C55EBE1005B08BD /* WasteManagementViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAC30EF52C55EB57005B08BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAC30EF82C55EB97005B08BD /* WasteManagementModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -655,14 +757,17 @@
 				DAC30E372C54C6B8005B08BD /* TokoKaryaView.swift in Sources */,
 				DAC30E612C54F0F0005B08BD /* EdukasiModel.swift in Sources */,
 				DAC30E2D2C54C53F005B08BD /* HomeModel.swift in Sources */,
+				DAC30EEF2C55495C005B08BD /* ImageHelper.swift in Sources */,
 				DAC30E772C54FAF5005B08BD /* EventDaftarViewModel.swift in Sources */,
 				DAC30E5E2C54E253005B08BD /* EditProfileView.swift in Sources */,
 				DAC30E872C5503AE005B08BD /* CustomView.swift in Sources */,
 				DAC30E7C2C54FC10005B08BD /* DailyMissionModel.swift in Sources */,
 				DAC30E2A2C54C4FE005B08BD /* HomeView.swift in Sources */,
+				DAC30EF72C55EB63005B08BD /* WasteManagementView.swift in Sources */,
 				DAC30E5B2C54DFB6005B08BD /* ProfileModel.swift in Sources */,
 				DAC30E3D2C54C6FF005B08BD /* EdukasiView.swift in Sources */,
 				DAC30EDB2C553E0D005B08BD /* RegisterViewModel.swift in Sources */,
+				DAC30EED2C55431E005B08BD /* LandingViewModel.swift in Sources */,
 				DAC30E482C54CED5005B08BD /* TokoKaryaViewModel.swift in Sources */,
 				DAC30E452C54CDC0005B08BD /* NetworkHelper.swift in Sources */,
 				DAC30E562C54DA45005B08BD /* DailyMissionView.swift in Sources */,
@@ -671,22 +776,29 @@
 				DAC30E982C550CDF005B08BD /* MapView.swift in Sources */,
 				DAC30E6D2C54F9CD005B08BD /* NewsViewModel.swift in Sources */,
 				DAC30E312C54C5D8005B08BD /* MainHomeView.swift in Sources */,
+				DAC30EE52C553FA3005B08BD /* LoginViewModel.swift in Sources */,
 				DAC30E4A2C54CFA1005B08BD /* TokoKaryaModel.swift in Sources */,
 				DAC30E932C5505E0005B08BD /* ZonaResikoModel.swift in Sources */,
 				DAC30E642C54F486005B08BD /* EventView.swift in Sources */,
+				DAC30EF92C55EB97005B08BD /* WasteManagementModel.swift in Sources */,
 				DAC30E7F2C54FC39005B08BD /* DailyMissionViewModel.swift in Sources */,
+				DAC30EE72C553FAC005B08BD /* LoginModel.swift in Sources */,
 				DAC30E3B2C54C6E9005B08BD /* EdukasiViewModel.swift in Sources */,
 				DAC30E412C54C797005B08BD /* ProfileView.swift in Sources */,
+				DAC30EF12C55B0EA005B08BD /* String.swift in Sources */,
 				DAC30E582C54DF88005B08BD /* ProfileViewModel.swift in Sources */,
 				DAC30E8D2C5505C3005B08BD /* ZonaResikoView.swift in Sources */,
 				DAC30E792C54FB1B005B08BD /* EventDaftarView.swift in Sources */,
 				DAC30E902C5505D3005B08BD /* ZonaResikoViewModel.swift in Sources */,
+				DAC30EFB2C55EBE1005B08BD /* WasteManagementViewModel.swift in Sources */,
 				DAC30E752C54FADA005B08BD /* EventDaftarModel.swift in Sources */,
 				DAC30E1B2C54BFDD005B08BD /* ContentView.swift in Sources */,
 				DAC30EDE2C553E2C005B08BD /* RegisterModel.swift in Sources */,
 				DAC30E952C5506B5005B08BD /* Appdelegate.swift in Sources */,
+				DAC30EEA2C55407C005B08BD /* LandingView.swift in Sources */,
 				DAC30E6A2C54F9AA005B08BD /* NewsView.swift in Sources */,
 				DAC30E2F2C54C54F005B08BD /* HomeViewModel.swift in Sources */,
+				DAC30EE32C553F9B005B08BD /* LoginView.swift in Sources */,
 				DAC30E702C54F9E9005B08BD /* NewsModel.swift in Sources */,
 				DAC30E832C5502CC005B08BD /* CustomNavigation.swift in Sources */,
 				DAC30E532C54D2F8005B08BD /* TukarPoinModel.swift in Sources */,

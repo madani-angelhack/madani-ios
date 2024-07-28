@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MissionsView: View {
+struct DailyMissionsView: View {
     @ObservedObject var viewModel = MissionsViewModel()
     
     var body: some View {
@@ -143,8 +143,8 @@ struct MissionsView: View {
     }
 }
 
-struct MissionsView_Previews: PreviewProvider {
+struct DailyMissionsView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionsView()
+        DailyMissionsView()
     }
 }

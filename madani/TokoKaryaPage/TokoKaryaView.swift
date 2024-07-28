@@ -49,8 +49,8 @@ struct TokoKaryaView: View {
                     SectionHeaderView(title: "12.12 Sales, buruan checkout!")
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(viewModel.promoItems) { item in
-                                PromoItemView(promoItem: item)
+                            ForEach(viewModel.itemsTokoKarya) { item in
+                                PromoItemView(item: item)
                             }
                         }
                         .padding(.horizontal)
@@ -63,15 +63,15 @@ struct TokoKaryaView: View {
                         .padding(.horizontal)
                     
                     // Recommendations
-                    SectionHeaderView(title: "Rekomendasi")
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(viewModel.promoItems) { item in
-                                PromoItemView(promoItem: item)
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
+//                    SectionHeaderView(title: "Rekomendasi")
+//                    ScrollView(.horizontal, showsIndicators: false) {
+//                        HStack {
+//                            ForEach(viewModel.promoItems) { item in
+//                                PromoItemView(item: item)
+//                            }
+//                        }
+//                        .padding(.horizontal)
+//                    }
                 }
                 .navigationTitle("Toko Karya")
             }

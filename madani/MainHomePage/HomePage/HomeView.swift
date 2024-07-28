@@ -8,12 +8,25 @@
 import Foundation
 import SwiftUI
 
-
-import SwiftUI
-
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State var goToProfile = false
+    @State private var isLongPressed = false
+    
+    @State private var suhuDanger = [Suhu]()
+    
+    @State var goToWasteManagement = false
+    @State var goToDailyMission = false
+    @State var goToMarketplace = false
+    @State var goToEvent = false
+    @State var goToDisaster = false
+    
+    @State var goToVoucher = false
+    
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
         NavigationView {
@@ -41,7 +54,8 @@ struct HomeView: View {
                         VStack {
                             Text("Saldo M-Point")
                             Text(": 30.000")
-                            
+                        }.onTapGesture {
+                            goToVoucher = true
                         }
                         VStack {
                             Text("Sampah terjual")
@@ -52,46 +66,127 @@ struct HomeView: View {
                     }
                     .padding()
                     
-                    // Action buttons
+                    
                     HStack {
-                        ActionButton(title: "Waste Bank", iconName: "trash.fill")
-                        ActionButton(title: "Disaster Management", iconName: "checkmark.circle.fill")
-                        ActionButton(title: "Daily Mission", iconName: "checkmark.circle.fill")
-                        ActionButton(title: "Market Place", iconName: "checkmark.circle.fill")
-                        ActionButton(title: "Lainnya", iconName: "checkmark.circle.fill")
-                    }
-                    .padding()
+                        VStack {
+                            Image(systemName: "")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 50)
+                                .padding()
+                            
+                            Text("Disaster Management")
+                                .font(.headline)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .background(viewModel.itemsDanger.count > 0 ? .red : .blue)
+                        .onTapGesture {
+                            self.goToDisaster = true
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            Text("Grab")
+                            Text("Polisi")
+                            Text("Damkar")
+                            Text("RT Setempat")
+                        }
+                        Image("SOS")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .onLongPressGesture {
+                                print("SOS button long pressed")
+                                isLongPressed = true
+                            }
+                    }.padding()
                     
-                    // Challenges
-                    SectionHeaderView(title: "Misi Hari ini")
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(viewModel.challenges) { challenge in
-                                ChallengeView(challenge: challenge)
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(viewModel.items) { item in
+                            VStack {
+                                Image(systemName: item.iconName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 50)
+                                    .padding()
+                                
+                                Text(item.title)
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .onTapGesture {
+                                if item.id == 1 {
+                                    goToWasteManagement = true
+                                }else if item.id == 2 {
+                                    goToDailyMission = true
+                                }else if item.id == 3 {
+                                    goToMarketplace = true
+                                }else {
+                                    goToEvent = true
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.top, 20)
                     
-                    // Promo Items
-                    SectionHeaderView(title: "Ada promo apa hari ini?")
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(viewModel.promoItems) { item in
-                                PromoItemView(promoItem: item)
-                            }
-                        }
-                    }
-                }.background(
-                    NavigationLink(
-                        destination: ProfileView(),
-                        isActive: $goToProfile,
-                        label: { EmptyView() }
-                    )
-                    .hidden()
+                    Spacer()
+                    
+                }
+            }.background(
+                NavigationLink(
+                    destination: ProfileView(),
+                    isActive: $goToProfile,
+                    label: { EmptyView() }
                 )
-                .navigationTitle("Dashboard")
-            }
+                .hidden()
+            ).background(
+                NavigationLink(
+                    destination: WasteManagementView(),
+                    isActive: $goToWasteManagement,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .background(
+                NavigationLink(
+                    destination: DailyMissionsView(),
+                    isActive: $goToDailyMission,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .background(
+                NavigationLink(
+                    destination: TokoKaryaView(),
+                    isActive: $goToMarketplace,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .background(
+                NavigationLink(
+                    destination: EventView(),
+                    isActive: $goToEvent,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .background(
+                NavigationLink(
+                    destination: ZonaResikoView(viewModel: ZonaResikoViewModel(dangers: self.viewModel.itemsSuhu)),
+                    isActive: $goToDisaster,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .background(
+                NavigationLink(
+                    destination: TukarPoinView(),
+                    isActive: $goToVoucher,
+                    label: { EmptyView() }
+                )
+                .hidden())
+            .navigationTitle("Dashboard")
         }
     }
 }
@@ -147,19 +242,21 @@ struct ChallengeView: View {
 }
 
 struct PromoItemView: View {
-    let promoItem: PromoItem
+    let item: itemTokoKarya
     
     var body: some View {
         VStack {
-            Image(promoItem.image)
-                .resizable()
-                .frame(width: 100, height: 100)
-                .cornerRadius(10)
-            Text(promoItem.name)
+            if let data = Data(base64Encoded: item.image ?? "", options: .ignoreUnknownCharacters), let uiImage = UIImage(data: data) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(10)
+            }
+            Text(item.name ?? "")
                 .font(.headline)
-            Text(promoItem.price)
+            Text(String(item.price ?? 0))
                 .font(.subheadline)
-            Text("Stock: \(promoItem.stock)")
+            Text("Stock: \(item.stock ?? "")")
                 .font(.caption)
         }
         .padding()

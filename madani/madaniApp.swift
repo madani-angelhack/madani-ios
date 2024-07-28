@@ -10,11 +10,17 @@ import GoogleMaps
 
 @main
 struct madaniApp: App {
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
-            ZonaResikoView()
+            if isLoggedIn {
+                MainHomeView()
+            }else {
+                LoginView()
+                
+            }
         }
     }
 }
