@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDuqO8ePCoZc_IMjya62OciXn494Hfrkw8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>911018614686</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.madani</string>
+	<key>PROJECT_ID</key>
+	<string>madani-iot-c9145</string>
+	<key>STORAGE_BUCKET</key>
+	<string>madani-iot-c9145.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:911018614686:ios:96d8fa92db78acaf33008f</string>
+	<key>DATABASE_URL</key>
+	<string>https://madani-iot-c9145-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
